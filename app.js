@@ -34,3 +34,22 @@ document.onmousemove = function(e) {
         setRandomColor()
       }
  };
+
+ document.addEventListener('touchmove', handleMove)
+
+function handleMove(e) {
+       var touchCoords = getMousePos(e);
+       console.log(touchCoords)
+       let h = parseInt((touchCoords["x"] / width) * 360)
+       let l = parseInt((touchCoords["y"] / height) * (50 - 20) + 20)
+
+       document.documentElement.style.setProperty('--base', `hsl(${h}, 50%, ${l}%)`)
+
+       let base = document.documentElement.style.getPropertyValue('--base')
+       let target = document.documentElement.style.getPropertyValue('--target')
+       console.log(target, base)
+       if ( base === target) {
+         alert("You matched!")
+         setRandomColor()
+       }
+  };
