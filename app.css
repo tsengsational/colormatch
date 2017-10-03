@@ -1,0 +1,41 @@
+:root {
+    --base: grey;
+    --target: white;
+}
+
+body {
+  background: var(--base);
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  margin: auto;
+}
+
+.wrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title {
+  margin: 10vh 0 0 0;
+  width: 100%;
+  padding: 25px 10px;
+  border-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.5)
+}
+
+.target {
+  position: fixed;
+  width: 10vw;
+  height: 10vh;
+  top: 45vh;
+  left: 45vw;
+  color: var(--target);
+  text-align: center;
+}
