@@ -9,7 +9,11 @@ function setRandomColor() {
 }
 
 function getMousePos(e) {
-    return { x: e.clientX, y: e.clientY };
+  return { x: e.clientX, y: e.clientY };
+}
+
+function getTouchPos(e) {
+  return { x: e.touches[0].clientX, y: e.touches[0].clientY}
 }
 
 setRandomColor()
@@ -17,12 +21,16 @@ setRandomColor()
 let icon = document.querySelector('.fa')
 icon.addEventListener('click', setRandomColor)
 
-document.onmousemove = function(e) {
-  var mouseCoords = getMousePos(e);
-  // console.log(mouseCoords)
-  let h = parseInt((mouseCoords["x"] / width) * 360)
-  let l = parseInt((mouseCoords["y"] / height) * (50 - 20) + 20)
 
+function onMove(e) {
+  if ( e.touches ) {
+    var coords = getTouchPos(e);
+  } else {
+    var coords = getMousePos(e);
+  }
+
+  let h = parseInt((coords["x"] / width) * 360)
+  let l = parseInt((coords["y"] / height) * (50 - 20) + 20)
   document.documentElement.style.setProperty('--base', `hsl(${h}, 50%, ${l}%)`)
 
   let base = document.documentElement.style.getPropertyValue('--base')
@@ -32,3 +40,10 @@ document.onmousemove = function(e) {
     setRandomColor()
   }
  };
+
+function onTouchMove(e) {
+  console.log("moving", e)
+}
+
+document.onmousemove = onMove
+document.ontouchmove = onMove
