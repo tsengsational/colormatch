@@ -1,26 +1,17 @@
-var width = window.innerWidth
-var height = window.innerHeight
-
-function setRandomColor() {
-  let randomH = (parseInt(Math.random() * 360))
-  let randomL = (parseInt(Math.random() * (50 - 20) + 20))
-  let randomColor = `hsl(${randomH}, 50%, ${randomL}%)`
-  document.documentElement.style.setProperty('--target', randomColor)
-}
+let width = window.innerWidth;
+let height = window.innerHeight;
+let closeBtn = document.querySelector(".close-btn");
+let icon = document.querySelector('.fa')
+let title = document.querySelector('.title')
+let help = document.querySelector('.help')
 
 function getMousePos(e) {
   return { x: e.clientX, y: e.clientY };
 }
 
 function getTouchPos(e) {
-  return { x: e.touches[0].clientX, y: e.touches[0].clientY}
+  return { x: e.touches[0].clientX, y: e.touches[0].clientY};
 }
-
-setRandomColor()
-
-let icon = document.querySelector('.fa')
-icon.addEventListener('click', setRandomColor)
-
 
 function onMove(e) {
   if ( e.touches ) {
@@ -41,9 +32,27 @@ function onMove(e) {
   }
  };
 
+ function toggleTitle() {
+   title.classList.toggle('hide')
+   help.classList.toggle('hide')
+ }
+
+function setRandomColor() {
+ let randomH = (parseInt(Math.random() * 360));
+ let randomL = (parseInt(Math.random() * (50 - 20) + 20));
+ let randomColor = `hsl(${randomH}, 50%, ${randomL}%)`;
+ document.documentElement.style.setProperty('--target', randomColor);
+}
+
 function onTouchMove(e) {
   console.log("moving", e)
 }
 
+setRandomColor()
+icon.addEventListener('click', setRandomColor);
+closeBtn.addEventListener('click', toggleTitle);
+closeBtn.addEventListener('touchstart', toggleTitle);
+help.addEventListener('click', toggleTitle);
+help.addEventListener('touchstart', toggleTitle);
 document.onmousemove = onMove
 document.ontouchmove = onMove

@@ -1,6 +1,7 @@
 :root {
     --base: grey;
     --target: white;
+    --bkgd: rgba(255, 255, 255, 1);
 }
 
 body {
@@ -14,29 +15,57 @@ h1 {
   margin: auto;
 }
 
+.close-btn {
+  position: absolute;
+  top: 10%;
+  right:10%;
+  cursor: pointer;
+}
+
+.help {
+  background-color: var(--bkgd);
+  border-radius: 50%;
+  bottom: 5%;
+  cursor: pointer;
+  height: 20px;
+  padding-top: 2px;
+  position: fixed;
+  right: 5%;
+  text-align: center;
+  width: 20px;
+}
+
+.hide {
+  display: none;
+}
+
 .target {
   color: var(--target);
   height: 10vh;
   left: 45vw;
-  position: fixed;
+  position: absolute;
   text-align: center;
   top: 45vh;
   width: 10vw;
 }
 .text-center {
   text-align: center;
+  transform: translateY(25%);
 }
 
 .title {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10%;
-  margin: 10vh 0 0 0;
-  padding: 25px 10px;
-  width: 100%;
+  background-color: var(--bkgd);
+  border-radius: 25%;
+  height: 30vh;
+  margin: 35vh 25vw;
+  padding: 10px;
+  position: fixed;
+  width: 50vw;
+  z-index: 1;
 }
 
-.wrapper {
+/*.wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
-}
+}*/
