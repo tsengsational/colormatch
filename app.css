@@ -42,10 +42,10 @@ h1 {
 .target {
   color: var(--target);
   height: 10vh;
-  left: 40vw;
-  position: absolute;
+  left: 45vw;
+  position: fixed;
   text-align: center;
-  top: 40vh;
+  top: 45vh;
 }
 .text-center {
   text-align: center;
