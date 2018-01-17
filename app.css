@@ -47,11 +47,12 @@ h1 {
 
 .target {
   color: var(--target);
+  cursor: pointer;
   height: 10vh;
-  left: 45vw;
+  left: calc(50vw - 34px);
   position: fixed;
   text-align: center;
-  top: 45vh;
+  top: calc(50vh - 40px);
 }
 .text-center {
   text-align: center;
@@ -102,6 +103,11 @@ h1 {
     width: 60px;
     height: 60px;
     font-size: 50px;
+  }
+
+  .target {
+    left: calc(50vw - 42.5px)
+    top: calc(50vh - 50px)
   }
 
   .title {
