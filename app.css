@@ -6,20 +6,26 @@
 
 
 body {
-  background: var(--base);
+  background-color: var(--base);
   font-family: 'Montserrat', sans-serif;
 }
 
 h1 {
   font-family: 'Luckiest Guy', cursive;
-  margin: auto;
 }
 
 .close-btn {
-  position: absolute;
-  top: 10%;
-  right:10%;
-  cursor: pointer;
+  background: #007991;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 25%;
+  color: white;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  padding: 20px;
+  margin: 0 auto 40px;
+  height: 60px;
+  width: 200px;
   z-index: 2;
 }
 
@@ -56,13 +62,13 @@ h1 {
   border-radius: 25%;
   padding: 10px;
   position: fixed;
-  width: 50vw;
   z-index: 1;
 }
 
-@media (min-width: 601px) {
+@media (max-width: 2000px) {
   h1 {
     font-size: 50px;
+    margin: 0;
   }
 
   .help {
@@ -71,19 +77,21 @@ h1 {
   }
 
   .text-center {
-    transform: translateY(25%);
+    margin: 10%;
   }
 
   .title {
-    height: 30vh;
-    margin: 35vh 25vw;
+    height: 50vh;
+    top: 25vh;
+    left: calc(25vw - 10px);
     width: 50vw;
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 700px) {
   h1 {
     font-size: 80px;
+    margin: 0px 0px;
   }
 
   body {
@@ -97,8 +105,9 @@ h1 {
   }
 
   .title {
-    height: 60vh;
-    margin: 20vh 10vw;
+    height: 80vh;
+    top: 10vh;
+    left: calc(10vw - 10px);
     width: 80vw;
   }
 
@@ -106,9 +115,3 @@ h1 {
     transform: translateY(10%);
   }
 }
-
-/*.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 100%;
-}*/
