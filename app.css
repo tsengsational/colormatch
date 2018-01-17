@@ -20,6 +20,7 @@ h1 {
   top: 10%;
   right:10%;
   cursor: pointer;
+  z-index: 2;
 }
 
 .help {
@@ -42,10 +43,10 @@ h1 {
 .target {
   color: var(--target);
   height: 10vh;
-  left: 45vw;
+  left: 40vw;
   position: absolute;
   text-align: center;
-  top: 45vh;
+  top: 40vh;
   width: 10vw;
 }
 .text-center {
@@ -62,6 +63,31 @@ h1 {
   position: fixed;
   width: 50vw;
   z-index: 1;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: 100px;
+  }
+
+  body {
+    font-size: 50px;
+  }
+
+  .help {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    height: 60vh;
+    margin: 20vh 10vw;
+    width: 80vw;
+  }
+
+  .text-center {
+    transform: translateY(50%);
+  }
 }
 
 /*.wrapper {

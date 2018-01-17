@@ -50,9 +50,10 @@ function onTouchMove(e) {
 
 setRandomColor()
 icon.addEventListener('click', setRandomColor);
+icon.ontouchstart = setRandomColor
 closeBtn.addEventListener('click', toggleTitle);
-closeBtn.addEventListener('touchstart', toggleTitle);
+closeBtn.ontouchstart = toggleTitle;
 help.addEventListener('click', toggleTitle);
-help.addEventListener('touchstart', toggleTitle);
-document.onmousemove = onMove
-document.ontouchmove = onMove
+help.ontouchstart = toggleTitle;
+document.onmousemove = onMove;
+document.ontouchmove = onMove;
