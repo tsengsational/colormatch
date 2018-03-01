@@ -14,6 +14,29 @@ h1 {
   font-family: 'Luckiest Guy', cursive;
 }
 
+#timer::before {
+  color: white;
+  content: "Time: ";
+}
+
+#timer {
+  color: white;
+  position: fixed;
+}
+
+#score::before {
+  content: "Score: ";
+  color: white;
+}
+
+#score {
+  color: white;
+  position: fixed;
+  right: 1vw;
+}
+
+
+
 .close-btn {
   background: #007991;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
